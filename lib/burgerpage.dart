@@ -221,13 +221,15 @@ class _BurgerPageState extends State<BurgerPage> {
                                 color: Color(0xFFFE7D6A),
                                 fontWeight: FontWeight.w400),
                           ),
-                          IconButton(
-                            icon: Icon(Icons.add),
-                            color: Color(0xFFFE7D6A),
-                            onPressed: () {
-                              adjustQuantity('PLUS');
-                            },
-                          ),
+                          Expanded(
+                            child: IconButton(
+                              icon: Icon(Icons.add),
+                              color: Color(0xFFFE7D6A),
+                              onPressed: () {
+                                adjustQuantity('PLUS');
+                              },
+                            ),
+                          )
                         ],
                       ),
                     ),
