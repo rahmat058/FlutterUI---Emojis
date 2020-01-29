@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_food_designs/foodtabs.dart';
+
+import 'foodtabs.dart';
+import 'burgerpage.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -133,12 +135,7 @@ class _DashboardPageState extends State<DashboardPage>
             height: MediaQuery.of(context).size.height - 450.0,
             child: TabBarView(
               controller: tabController,
-              children: <Widget>[
-                FoodTab(),
-                FoodTab(),
-                FoodTab(),
-                FoodTab()
-              ],
+              children: <Widget>[FoodTab(), FoodTab(), FoodTab(), FoodTab()],
             ),
           )
         ],
@@ -153,6 +150,9 @@ class _DashboardPageState extends State<DashboardPage>
       child: InkWell(
         onTap: () {
           //TODO
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => BurgerPage(heroTag: foodName, foodName: foodName, pricePerItem: price, imgPath: imgPath)
+          ));
         },
         child: Container(
           height: 175.0,
